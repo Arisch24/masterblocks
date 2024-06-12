@@ -13,6 +13,10 @@
       "wide",
       "full"
     ],
+    "color": {
+      "background": true,
+      "text": true
+    },
     "anchor": true
   },
   "attributes": {
