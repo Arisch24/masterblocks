@@ -15,7 +15,8 @@
 	},
 	"attributes": {
 		"buttonName": {
-			"type": "string"
+			"type": "string",
+			"default": "Copy JSON"
 		},
 		"jsonData": {
 			"type": "string"

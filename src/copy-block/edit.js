@@ -56,11 +56,15 @@ export default function Edit({ attributes, setAttributes }) {
 			<div {...useBlockProps()}>
 				<div className="is-layout-flex">
 					<RichText
-						value={attributes.buttonName}
+						value={
+							attributes.buttonName !== "" ? attributes.buttonName : "Click Me"
+						}
 						className="wp-element-button"
 						placeholder="Your CTA text"
 						onChange={(buttonName) => {
-							setAttributes({ buttonName });
+							setAttributes({
+								buttonName,
+							});
 						}}
 					></RichText>
 				</div>
