@@ -11,10 +11,10 @@
  */
 
 $masterblocks_button_name = $attributes['buttonName'];
-$masterblocks_json_data   = $attributes['jsonData'] === '' ? '' : $attributes['jsonData'];
+$masterblocks_json_data   = isset( $attributes['jsonData'] ) ? $attributes['jsonData'] : null;
 
 ?>
-<div <?php echo esc_attr( get_block_wrapper_attributes() ); ?>>
-	<button class="wp-element-button" data-json="<?php echo esc_attr( $masterblocks_json_data ); ?>" tabindex="0" role="button"><?php echo esc_html( $masterblocks_button_name ); ?>
+<div <?php echo get_block_wrapper_attributes() // phpcs:ignore ?>>
+	<button class="wp-element-button" data-json="<?php echo esc_attr( $masterblocks_json_data ); ?>" tabindex="0" role="button" aria-label="<?php echo esc_attr( $masterblocks_button_name ); ?>"><?php echo esc_html( $masterblocks_button_name ); ?>
 	</button>
 </div>
