@@ -44,4 +44,20 @@ function masterblocks_init() {
 		}
 	}
 }
-add_action( 'init', __NAMESPACE__ . 'masterblocks_init' );
+add_action( 'init', __NAMESPACE__ . '\masterblocks_init' );
+
+/**
+ * Add custom category for blocks.
+ *
+ * @param array $categories - Array of categories.
+ */
+function masterblocks_custom_category( $categories ) {
+	$categories[] = array(
+		'slug'  => 'masterblocks',
+		'title' => __( 'MasterBlocks', 'masterblocks' ),
+	);
+
+	return $categories;
+}
+
+add_filter( 'block_categories', __NAMESPACE__ . '\masterblocks_custom_category', 10, 2 );

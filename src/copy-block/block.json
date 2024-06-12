@@ -4,8 +4,7 @@
 	"name": "masterblocks/copy-block",
 	"version": "0.1.0",
 	"title": "Copy Block",
-	"category": "media",
-	"icon": "smiley",
+	"category": "masterblocks",
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
 	"supports": {
