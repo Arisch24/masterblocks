@@ -10,3 +10,4 @@
 composer.json   text eol=lf
 package.json    text eol=lf
 phpcs.xml.dist  text eol=lf
+.prettierignore  text eol=lf
