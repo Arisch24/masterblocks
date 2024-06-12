@@ -23,19 +23,25 @@
 /* eslint-disable no-console */
 document.addEventListener("DOMContentLoaded", function () {
 	let copyBtn = document.querySelectorAll(
-		".wp-block-guten-enhancer-copy-block .wp-element-button",
+		".wp-block-masterblocks-copy-block .wp-element-button",
 	);
 
-	if (!copyBtn) {
-		console.log("No button found");
+	if (!navigator.clipboard) {
+		console.error("Clipboard API not available");
 		return;
 	}
+
 	copyBtn.forEach((el) => {
 		el.addEventListener("click", function (e) {
 			let jsonData = e.target.getAttribute("data-json");
+			let oldText = this.textContent.trim();
+			let newText = "Copied!";
 			navigator.clipboard.writeText(jsonData).then(
 				() => {
-					console.log("JSON copied to clipboard");
+					this.textContent = newText;
+					setTimeout(() => {
+						this.textContent = oldText;
+					}, 1000);
 				},
 				(err) => {
 					console.error("Error copying JSON to clipboard", err);
