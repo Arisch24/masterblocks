@@ -18,7 +18,7 @@ $masterblocks_text_color  = $attributes['btnTextColor'];
 ?>
 <div <?php echo get_block_wrapper_attributes(['class' => 'has-bg-color has-text-color' ]) // phpcs:ignore ?>>
 	<button
-	style="color: <?php echo esc_attr( $masterblocks_text_color ); ?>; background-color: <?php echo esc_attr( $masterblocks_bg_color ); ?>;" 
+	style="color: <?php echo esc_attr( $masterblocks_text_color . '; background-color:' . $masterblocks_bg_color ); ?>;" 
 	data-json="<?php echo esc_attr( $masterblocks_json_data ); ?>" 
 	tabindex="0" 
 	role="button"><?php echo esc_html( $masterblocks_button_name ); ?>
