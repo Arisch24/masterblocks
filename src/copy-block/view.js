@@ -23,7 +23,7 @@
 /* eslint-disable no-console */
 document.addEventListener("DOMContentLoaded", function () {
 	let copyBtn = document.querySelectorAll(
-		".wp-block-masterblocks-copy-block .wp-element-button",
+		".wp-block-masterblocks-copy-block button",
 	);
 
 	if (!navigator.clipboard) {

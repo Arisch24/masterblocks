@@ -4,3 +4,15 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+
+.wp-block-masterblocks-copy-block {
+	button[data-json] {
+		border-radius: 0.33rem;
+		border-width: 0;
+		font-size: var(--wp--preset--font-size--small);
+		font-weight: 500;
+		padding-block: 0.6rem;
+		padding-inline: 1rem;
+		cursor: pointer;
+	}
+}

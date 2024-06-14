@@ -16,7 +16,14 @@ import {
 	RichText,
 	InspectorControls,
 } from "@wordpress/block-editor";
-import { PanelBody, PanelRow, TextareaControl } from "@wordpress/components";
+
+import {
+	PanelBody,
+	PanelRow,
+	TextareaControl,
+	ColorPicker,
+	BaseControl,
+} from "@wordpress/components";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -50,6 +57,34 @@ export default function Edit({ attributes, setAttributes }) {
 							value={__(attributes.jsonData)}
 						></TextareaControl>
 					</PanelRow>
+					<PanelRow>
+						<BaseControl label={__("Button Text Color")}>
+							<ColorPicker
+								onChange={(btnTextColor) => {
+									setAttributes({ btnTextColor });
+								}}
+								color={
+									attributes.btnTextColor === ""
+										? attributes.btnTextColor.default
+										: attributes.btnTextColor
+								}
+							></ColorPicker>
+						</BaseControl>
+					</PanelRow>
+					<PanelRow>
+						<BaseControl label={__("Button Background Color")}>
+							<ColorPicker
+								onChange={(btnBgColor) => {
+									setAttributes({ btnBgColor });
+								}}
+								color={
+									attributes.btnBgColor === ""
+										? attributes.btnBgColor.default
+										: attributes.btnBgColor
+								}
+							></ColorPicker>
+						</BaseControl>
+					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
 			{/* End InspectorControls Zone */}
@@ -60,11 +95,15 @@ export default function Edit({ attributes, setAttributes }) {
 							attributes.buttonName !== "" ? attributes.buttonName : "Click Me"
 						}
 						className="wp-element-button"
-						placeholder="Your CTA text"
+						placeholder={__("Button text")}
 						onChange={(buttonName) => {
 							setAttributes({
 								buttonName,
 							});
+						}}
+						style={{
+							color: attributes.btnTextColor,
+							backgroundColor: attributes.btnBgColor,
 						}}
 					></RichText>
 				</div>
